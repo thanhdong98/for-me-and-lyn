@@ -1,0 +1,200 @@
+.letter-image {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.animated-mail {
+  position: absolute;
+  height: 300px;
+  width: 400px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+.animated-mail .body {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 200px 400px;
+  border-color: transparent transparent #e95f55 transparent;
+  z-index: 2;
+}
+.animated-mail .top-fold {
+  position: absolute;
+  top: 100px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 200px 0 200px;
+  -webkit-transform-origin: 50% 0%;
+  -webkit-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  -moz-transform-origin: 50% 0%;
+  -moz-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  transform-origin: 50% 0%;
+  transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  border-color: #cf4a43 transparent transparent transparent;
+  z-index: 2;
+}
+
+.animated-mail .back-fold {
+  position: absolute;
+  bottom: 0;
+  width: 400px;
+  height: 200px;
+  background: #cf4a43;
+  z-index: 0;
+}
+
+.animated-mail .left-fold {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 0 100px 200px;
+  border-color: transparent transparent transparent #e15349;
+  z-index: 2;
+}
+
+.animated-mail .letter {
+  left: 20px;
+  bottom: 0px;
+  position: absolute;
+  width: 360px;
+  height: 20px;
+  background: rgb(21, 8, 8);
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transition: 0.4s 0.2s;
+  -moz-transition: 0.4s 0.2s;
+  transition: 0.4s 0.2s;
+}
+.animated-mail .letter .letter-border {
+  height: 20px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #dfbabc,
+    #948a8a 8px,
+    transparent 8px,
+    transparent 18px
+  );
+}
+.animated-mail .letter .letter-title {
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 10px;
+  width: 40%;
+  background: rgb(236, 211, 215);
+}
+.animated-mail .letter .letter-context {
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 10px;
+  width: 20%;
+  background: pink;
+  content: "ram avtar";
+}
+.animated-mail .letter .letter-context-body {
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 10px;
+  width: 99%;
+  color: black;
+  content: "ram avtar";
+}
+.shadow {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  width: 600px;
+  height: 50px;
+  transition: 0.4s;
+  transform: translateX(-50%);
+  -webkit-transition: 0.4s;
+  -webkit-transform: translateX(-50%);
+  -moz-transition: 0.4s;
+  -moz-transform: translateX(-50%);
+  border-radius: 100%;
+  background: radial-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.letter-image.open .animated-mail {
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+}
+.letter-image.open .animated-mail .top-fold {
+  transition: transform 0.4s, z-index 0.2s;
+  transform: rotateX(180deg);
+  -webkit-transition: transform 0.4s, z-index 0.2s;
+  -webkit-transform: rotateX(180deg);
+  -moz-transition: transform 0.4s, z-index 0.2s;
+  -moz-transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.letter-image.open .animated-mail .letter {
+  height: 500px;
+  content: "ram avtar";
+  color: #000;
+}
+
+.letter-image.open .shadow {
+  width: 500px;
+}
+
+/* heart */
+
+.heart {
+  position: relative;
+  width: 30px;
+  height: 25px;
+  background-color: rgb(223, 92, 113);
+  transform: rotate(-45deg); /* Rotate to form the point of the heart */
+  margin: 15px auto; /* Center the heart */
+  animation: beat 1s infinite alternate; /* Apply the beating animation */
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; /* Create the rounded top parts of the heart */
+  background-color: rgb(223, 92, 113);
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  right: -10px;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg); /* Normal size */
+  }
+  50% {
+    transform: scale(1.1) rotate(-45deg); /* Slightly larger for the "beat" */
+  }
+  100% {
+    transform: scale(1) rotate(-45deg); /* Back to normal size */
+  }
+}
