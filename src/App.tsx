@@ -1,6 +1,7 @@
 import "./App.css";
-import { GlobalProvider } from "./providers/global-provider";
+import GlobalProvider from "./providers/global-provider";
 import Routes from "./routes";
+import "./components/common.css";
 
 function App() {
   return (

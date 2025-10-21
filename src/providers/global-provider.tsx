@@ -1,15 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { GlobalContext } from "../contexts/global";
 import { Pages } from "../types/common";
-import type { GlobalContextType } from "../types/global-context";
 
-export const GlobalContext = createContext<GlobalContextType>({
-  isLogin: false,
-  login: () => {},
-  currentPage: Pages.LOGIN,
-  goTo: () => {},
-});
-
-export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
+const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLogin, setIsLogin] = useState(false);
   const [currentPage, setCurrentPage] = useState<Pages>(Pages.LOGIN);
 
@@ -19,21 +12,33 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
     setCurrentPage(Pages.HOME);
   };
 
+  const returnEnvelope = () => {
+    localStorage.removeItem("is-login");
+    setIsLogin(false);
+    setCurrentPage(Pages.LOGIN);
+  };
+
   const goTo = (page: Pages) => {
     setCurrentPage(page);
+    localStorage.setItem("current-page", page);
   };
 
   useEffect(() => {
     const isLogin = localStorage.getItem("is-login");
     if (isLogin?.toString() === "true") {
+      const page = localStorage.getItem("current-page") ?? Pages.HOME;
       setIsLogin(true);
-      setCurrentPage(Pages.HOME);
+      setCurrentPage(page as Pages);
     }
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ isLogin, login, currentPage, goTo }}>
+    <GlobalContext.Provider
+      value={{ returnEnvelope, isLogin, login, currentPage, goTo }}
+    >
       {children}
     </GlobalContext.Provider>
   );
 };
+
+export default GlobalProvider;

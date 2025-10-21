@@ -1,0 +1,43 @@
+#notebook-paper {
+  font-family: helvetica neue, helvetica, arial, sans-serif;
+  font-weight: 200;
+
+  width: 600px;
+  height: auto;
+  background: linear-gradient(to bottom, #8f6868 29px, #977676 1px);
+  margin: 20px auto;
+  background-size: 100% 30px;
+  position: relative;
+  padding-left: 160px;
+  padding-right: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 0px 6px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+#notebook-paper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 140px;
+  height: 100%;
+  width: 1px;
+  background: #8b6262;
+}
+
+#notebook-paper #content {
+  font-size: 20px;
+  line-height: 30px;
+  padding-bottom: 20px;
+  p {
+    margin: 0 0 30px 0;
+  }
+}

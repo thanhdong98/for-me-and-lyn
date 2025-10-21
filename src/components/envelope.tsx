@@ -6,12 +6,12 @@ const Envelope: FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
     <div
-      className={`letter-image ${isOpen ? "open" : ""}`}
+      className={`letter-image ${isOpen ? "open" : "pulse-hover"}`}
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="animated-mail">
         <div className="back-fold"></div>
-        <div className="letter">
+        <div className="letter" onClick={(e) => e.stopPropagation()}>
           <div className="letter-border"></div>
           <div className="flex justify-between">
             <div className="w-[80%]">
