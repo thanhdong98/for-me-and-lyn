@@ -18,20 +18,12 @@ const PAGES: Record<Pages, React.ReactNode> = {
   [Pages.PAGE_TWO]: <PageNumber pageNumber={2} />,
   [Pages.PAGE_THREE]: <PageNumber pageNumber={3} />,
   [Pages.PAGE_FOUR]: <PageNumber pageNumber={4} />,
-  [Pages.PAGE_FIVE]: <PageNumber pageNumber={5} />,
-  [Pages.PAGE_SIX]: <PageNumber pageNumber={6} />,
-  [Pages.PAGE_SEVEN]: <PageNumber pageNumber={7} />,
-  [Pages.PAGE_EIGHT]: <PageNumber pageNumber={8} />,
-  [Pages.PAGE_NINE]: <PageNumber pageNumber={9} />,
-  [Pages.PAGE_TEN]: <PageNumber pageNumber={10} />,
 };
 
 const Routes = () => {
   const { currentPage, isLogin, returnEnvelope, goTo } =
     useContext<GlobalContextType>(GlobalContext);
 
-
-    
   return (
     <>
       {isLogin && (
@@ -46,12 +38,6 @@ const Routes = () => {
                     Pages.PAGE_TWO,
                     Pages.PAGE_THREE,
                     Pages.PAGE_FOUR,
-                    Pages.PAGE_FIVE,
-                    Pages.PAGE_SIX,
-                    Pages.PAGE_SEVEN,
-                    Pages.PAGE_EIGHT,
-                    Pages.PAGE_NINE,
-                    Pages.PAGE_TEN,
                   ].map((page) => (
                     <button
                       className="btn-12"

@@ -26,7 +26,8 @@ const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const isLogin = localStorage.getItem("is-login");
     if (isLogin?.toString() === "true") {
-      const page = localStorage.getItem("current-page") ?? Pages.HOME;
+      let page = localStorage.getItem("current-page");
+      if (page === "undefined" || !page) page = Pages.HOME;
       setIsLogin(true);
       setCurrentPage(page as Pages);
     }

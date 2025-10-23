@@ -1,8 +1,8 @@
 import { Fragment, useState, type FC } from "react";
+import PiyoButton from "../piyo-button";
 import "./index.css";
 import "./note-paper.css";
-import NextButton from "../next-button";
-import PiyoButton from "../piyo-button";
+import RainyCloud from "../backgrounds/rainny-cloud";
 
 const texts = [
   `Anh đã đi qua hết một hành trình dài hơn khoảng một nửa phần đời của em, từng hỏi là "Sao tao lận đận trong tình cảm ghê á, tao sợ nó lại lặp lại, rồi cứ trông chờ hoài có chắc ai sẽ tới như mọi người vẫn nói không?`,
@@ -57,7 +57,8 @@ const IluText: FC = () => {
         <span className="letter letter-4 mr-3">Y</span>
         <span className="letter letter-2">N</span>
       </h1>
-      <div id="notebook-paper" className="text-yellow-500 relative">
+      <div id="notebook-paper" className="relative">
+        <RainyCloud className="top-[40%] left-[75px] absolute" />
         <PiyoButton onClick={!isReading ? clickView : undefined} />
         <div id="content">
           <span
@@ -68,12 +69,12 @@ const IluText: FC = () => {
             {texts.map((text, index) => (
               <Fragment key={index}>
                 {currentTextOrder > index ? (
-                  <span key={index} className="block text-justify">
+                  <span key={index} className="block text-justify text-yellow-500">
                     {text}
                   </span>
                 ) : (
                   index === currentTextOrder && (
-                    <span key={index} className="block">
+                    <span key={index} className="block text-yellow-500 ">
                       {text.substring(0, currentTextIndex)}{" "}
                       <span className="blink_me text-red-500">❤︎</span>
                     </span>
@@ -83,10 +84,6 @@ const IluText: FC = () => {
             ))}
           </span>
         </div>
-      </div>
-
-      <div className="flex justify-center">
-        <NextButton onClick={clickView} />
       </div>
     </div>
   );
