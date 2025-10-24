@@ -1,11 +1,12 @@
 import "./index.css";
+import bumbleImg from "../../assets/images/bumble.jpg";
 
 const NoteCard = () => {
   return (
     <div className="bday-card mb-10">
       <div className="bday-decor--container">
         <div className="bday-pic">
-          <img src="/images/bumble.jpg" />
+          <img src={bumbleImg} />
         </div>
 
         <p className="bday-decor bday-decor--top-right float">🎈</p>
@@ -18,8 +19,9 @@ const NoteCard = () => {
 
       <div className="bday-message bday-message--paper">
         <p>
-          <span className="px-6"> </span>Bumble đồ hen, Không thể tin được là em match xong ẻm kêu quẹt đại,
-          trong khi mình thì đọc kỹ profile ẻmmmm - 01/10/2025
+          <span className="px-6"> </span>Bumble đồ hen, Không thể tin được là em
+          match xong ẻm kêu quẹt đại, trong khi mình thì đọc kỹ profile ẻmmmm -
+          01/10/2025
         </p>
         <p className="bday-decor bday-decor--bottom-right zoom-left-in-out">
           🎉

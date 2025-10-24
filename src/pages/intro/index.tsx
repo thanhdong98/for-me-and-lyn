@@ -78,7 +78,7 @@ const Intro = () => {
         </div>
         <div className="bubble left">Nên em </div>
         <div className="bubble left">Hãy tiếp tục nút ở dưới nho </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mb-40">
           <GlowButton onClick={() => goTo(Pages.PAGE_ONE)} />
         </div>
       </div>

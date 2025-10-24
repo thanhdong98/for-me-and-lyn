@@ -6,7 +6,7 @@ const Blockquote: FC<{ show: boolean }> = ({ show }) => {
     <blockquote
       className={`otro-blockquote ${
         show ? "clicked" : ""
-      } overflow-y-scroll max-h-[200px]`}
+      } overflow-y-scroll max-h-[150px]`}
     >
       Trên đời này, việc gì ắt hẳn nếu vui thì sẽ không phải chuyện buồn, nếu có
       tình cảm thì phải thử!! Không thì sẽ bỏ lỡ cơ hội.

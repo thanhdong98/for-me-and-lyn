@@ -1,17 +1,22 @@
 import "./index.css";
+import cakeImg from "../../assets/images/cake.jpg";
+import funnyImg from "../../assets/images/funny.jpg";
+import nguo0_nguaImg from "../../assets/images/nguo0_ngua.jpg";
+import sushiImg from "../../assets/images/sushi.jpg";
+import lynFlowerImg from "../../assets/images/lyn-flower.jpg";
 
 const SliderImage = () => {
   return (
-    <div className="gallery mt-[10vh]">
+    <div className="gallery mt-[5vh]">
       <img
-        src="/images/cake.jpg"
+        src={cakeImg}
         alt="a dream catcher"
         className="object-fit"
       />
-      <img src="/images/funny.jpg" alt="a piano" />
-      <img src="/images/nguo0_ngua.jpg" alt="a live concert" />
-      <img src="/images/sushi.jpg" alt="Paris" />
-      <img src="/images/lyn-flower.jpg" alt="A women in kayak" />
+      <img src={funnyImg} alt="a piano" />
+      <img src={nguo0_nguaImg} alt="a live concert" />
+      <img src={sushiImg} alt="Paris" />
+      <img src={lynFlowerImg} alt="A women in kayak" />
     </div>
   );
 };
