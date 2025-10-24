@@ -1,5 +1,5 @@
 .gallery {
-  --s: 450px; /* control the size */
+  --s: 350px; /* control the size */
   --d: 15s; /* animation duration */
 
   display: grid;

@@ -6,7 +6,8 @@ import StoryNavigators from "../../components/navigators";
 import PageOne from "./contents/page1";
 import "./contents/index.css";
 import PageTwo from "./contents/page2";
-import Page3 from "./contents/page3";
+import PageThree from "./contents/page3";
+import PageFour from "./contents/page4";
 
 const NumberToPageMap = [
   Pages.INTRO,
@@ -42,18 +43,22 @@ const PageNumber: FC<{ pageNumber: number }> = ({ pageNumber }) => {
   return (
     <>
       <DriftingCloud />
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center min-h-screen">
         {pageNumber === 1 && <PageOne played={played[pageNumber] ?? false} />}
         {pageNumber === 2 && <PageTwo played={played[pageNumber] ?? false} />}
-        {pageNumber === 3 && <Page3 />}
-        <StoryNavigators
-          dark={pageNumber >= 2}
-          onPlay={onPlay}
-          onNextAction={() => onNavigate(true)}
-          onPreviousAction={() => onNavigate(false)}
-          hidePrevious={pageNumber === 1}
-        />
-        Page {pageNumber}
+        {pageNumber === 3 && <PageThree played={played[pageNumber] ?? false} />}
+        {pageNumber === 4 && <PageFour />}
+        {pageNumber !== 4 && (
+          <StoryNavigators
+            dark
+            onPlay={onPlay}
+            onNextAction={() => onNavigate(true)}
+            onPreviousAction={() => onNavigate(false)}
+            hidePrevious={pageNumber === 1 || played[pageNumber]}
+            hidePlay={pageNumber === 2 || played[pageNumber]}
+            hideNext={pageNumber !== 2 && !played[pageNumber]}
+          />
+        )}
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import "./index.css";
 
 const NextButton: FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
-    <button onClick={onClick} className="circle-btn circle-btn--alt">
+    <button onClick={onClick} className="circle-btn circle-btn--alt mb-10">
       <svg
         viewBox="0 0 200 200"
         width="200"
@@ -12,12 +12,6 @@ const NextButton: FC<{ onClick?: () => void }> = ({ onClick }) => {
         className="circle-btn__svg"
         aria-labelledby="circle-btn2-title circle-btn2-desc"
       >
-        <title id="circle-btn2-title">You are wonderful, now click this</title>
-        <desc id="circle-btn2-desc">
-          A rotating circle-btn with text placed around a circle, with a
-          cloud/flower shape around it, and a smiley face inside
-        </desc>
-
         <path
           id="circle-btn-circle-alt"
           className="circle-btn__path"
@@ -41,7 +35,7 @@ const NextButton: FC<{ onClick?: () => void }> = ({ onClick }) => {
 
         <text className="circle-btn__text">
           <textPath href="#circle-btn-circle-alt" stroke="none">
-            • Em đã sẵn sàng chưa? • Bắt đầu thui
+            • Điều anh muốn nói: Mai anh chở em nhoa
           </textPath>
         </text>
       </svg>

@@ -6,8 +6,8 @@
 .ilu-text {
   font-family: "Liberty";
   font-weight: 100;
-  font-size: 5rem;
-  letter-spacing: -0.25em;
+  font-size: 3rem;
+  letter-spacing: 0;
   flex-flow: row;
 }
 
@@ -16,6 +16,10 @@
   text-shadow: 0 0 2rem #00f0ff;
   display: inline-block;
   user-select: none;
+}
+
+.letter.letter-1 {
+  animation: flicker 2s ease-in-out infinite alternate;
 }
 
 .letter.letter-2 {

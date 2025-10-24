@@ -21,44 +21,9 @@ const PAGES: Record<Pages, React.ReactNode> = {
 };
 
 const Routes = () => {
-  const { currentPage, isLogin, returnEnvelope, goTo } =
-    useContext<GlobalContextType>(GlobalContext);
+  const { currentPage } = useContext<GlobalContextType>(GlobalContext);
 
-  return (
-    <>
-      {isLogin && (
-        <div className="flex flex-col items-center justify-center">
-          <div>
-            {currentPage === Pages.HOME && (
-              <div className="flex flex-col items-center justify-center">
-                <div className="flex flex-row items-center justify-center">
-                  {[
-                    Pages.INTRO,
-                    Pages.PAGE_ONE,
-                    Pages.PAGE_TWO,
-                    Pages.PAGE_THREE,
-                    Pages.PAGE_FOUR,
-                  ].map((page) => (
-                    <button
-                      className="btn-12"
-                      key={page}
-                      onClick={() => goTo(page)}
-                    >
-                      {page}
-                    </button>
-                  ))}
-                </div>
-                <button className="btn-12" onClick={() => returnEnvelope()}>
-                  Đóng thiệp
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-      {PAGES[currentPage]}
-    </>
-  );
+  return <>{PAGES[currentPage]}</>;
 };
 
 export default Routes;

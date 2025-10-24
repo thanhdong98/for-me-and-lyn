@@ -2,9 +2,9 @@ import "./index.css";
 
 const NoteCard = () => {
   return (
-    <div className="bday-card mb-20">
+    <div className="bday-card mb-10">
       <div className="bday-decor--container">
-        <div className="bday-pic ">
+        <div className="bday-pic">
           <img src="/images/bumble.jpg" />
         </div>
 
@@ -18,9 +18,8 @@ const NoteCard = () => {
 
       <div className="bday-message bday-message--paper">
         <p>
-          Ana, yet another year that we get to celebrate together! Hope you have
-          a great day, and may your new age be full of health, love and
-          laughter. Love you loads <br /> Camila
+          <span className="px-6"> </span>Bumble đồ hen, Không thể tin được là em match xong ẻm kêu quẹt đại,
+          trong khi mình thì đọc kỹ profile ẻmmmm - 01/10/2025
         </p>
         <p className="bday-decor bday-decor--bottom-right zoom-left-in-out">
           🎉

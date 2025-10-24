@@ -6,11 +6,11 @@
   --border_radius1: 60px 60px 40px 40px / 48px 48px 30px 30px;
   --border_radius2: 70px 70px 40px 40px / 48px 48px 30px 30px;
   --border_radius3: 40px 40px 40px 40px / 48px 48px 30px 30px;
+  left: calc(50% - 140px);
+  scale: 0.4;
 }
 
 .button {
-  margin-top: 70px;
-  margin-left: 70px;
   cursor: pointer;
 
   position: relative;

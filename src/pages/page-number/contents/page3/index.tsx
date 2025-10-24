@@ -1,9 +1,36 @@
-import "./page3.css";
+import { useEffect, useRef } from "react";
+import "./index.css";
 
-const Page3 = () => {
+const PageThree = ({ played }: { played: boolean }) => {
+  const ref1 = useRef<HTMLVideoElement | null>(null);
+  const ref2 = useRef<HTMLVideoElement | null>(null);
+  const ref3 = useRef<HTMLVideoElement | null>(null);
+  const ref4 = useRef<HTMLVideoElement | null>(null);
+  const ref5 = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const listRef = [
+      ref1?.current,
+      ref2?.current,
+      ref3?.current,
+      ref4?.current,
+      ref5?.current,
+    ];
+
+    listRef.forEach((ref) => {
+      if (ref) {
+        if (played) {
+          ref.play();
+        } else {
+          ref.pause();
+        }
+      }
+    });
+  }, [played]);
+
   return (
     <div className="card-wrapper">
-      <div className="card h-[400px] bg-orange-300">
+      <div className={`card w-3/5 ${played ? "show" : ""}`}>
         <div className="card-head">
           <svg viewBox="0 0 100 100" stroke="white">
             <path d="m38.977 59.074c0 2.75-4.125 2.75-4.125 0s4.125-2.75 4.125 0"></path>
@@ -14,28 +41,35 @@ const Page3 = () => {
           </svg>
         </div>
         <div className="card-body">
-          <div className="title text-white">Ant Collector</div>
+          <div className="title text-white text-center">Day one</div>
           <div className="desc">
-            Morgan has collected ants since they were six years old and now has
-            many dozen ants but none in their pants.
-          </div>
-          <div className="actions">
-            <button>
-              <i className="fa fa-heart-o"></i>
-            </button>
-            <button>
-              <i className="fa fa-exchange"></i>
-            </button>
-            <button>
-              <i className="fa fa-close"></i>
-            </button>
+            11/10/2025 Ngày mình gặp, anh không ngờ em lại là con người như
+            dãy!!
+            <br />
+            Hình tượng sụp đổ!!! Tại sao em có thể dễ thương mà tẻng tẻng dãy đc
+            hả nhỏ kia!!?
           </div>
         </div>
       </div>
-      <div className="card hover h-[400px] flex justify-center bg-neutral-900">
+      <div className=" w-2/5 flex flex-col ">
         <div className="card-body">
-          <video width="500" height="400" autoplay loop>
+          <video width="500" height="400" loop ref={ref1}>
             <source src="ptb.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="card-body">
+          <video width="500" height="400" loop ref={ref2}>
+            <source src="ptb.mp4#t=5" type="video/mp4" />
+          </video>
+        </div>
+        <div className="card-body">
+          <video width="500" height="400" loop ref={ref3}>
+            <source src="ptb.mp4#t=10" type="video/mp4" />
+          </video>
+        </div>
+        <div className="card-body">
+          <video width="500" height="400" loop ref={ref4}>
+            <source src="ptb.mp4#t=15" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -43,4 +77,4 @@ const Page3 = () => {
   );
 };
 
-export default Page3;
+export default PageThree;

@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Oswald:200,300,400,500,600,700&display=swap");
 
 .card-wrapper {
-  margin-top: 300px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .card {
+  height: 400px;
   position: relative;
   border: 3px solid #407088;
   box-shadow: 1px 1px 4px rgba(19, 39, 67, 0.3);
@@ -16,17 +17,21 @@
   overflow: hidden;
   margin: 10px;
 }
-.card:hover,
-.card.hover {
+.card.show,
+.card.show {
   border-color: #407088;
+  background-color: #7e397e;
 }
-.card:hover .card-head,
-.card.hover .card-head,
-.card:hover .card-body,
-.card.hover .card-body {
+.card.show .card-head {
   transform: translateY(0);
+  height: 120px;
+}
+.card.show .card-body {
+  transform: translateY(0);
+  height: 300px;
 }
 .card .card-head {
+  height: 100%;
   transform: translate(10%, 85%);
   transition: 0.3s ease all;
 }
@@ -49,27 +54,9 @@
 .card .card-body .title {
   font-family: "Oswald", sans-serif;
   padding: 0 1rem 0.25rem;
-  color: #ffb5b5;
+  color: #c0baba;
 }
 .card .card-body .desc {
   padding: 0.5rem 1rem;
   order: 99;
-}
-.card .card-body .actions {
-  order: 100;
-  padding: 0.5rem 1rem;
-}
-.card .card-body .actions button {
-  background: transparent;
-  border: 0;
-  color: #ffb5b5;
-  font-size: 20px;
-  width: 32%;
-  padding: 10px 0;
-  cursor: pointer;
-  transition: 0.3s ease all;
-}
-.card .card-body .actions button:hover {
-  color: #407088;
-  transform: translateY(-5px);
 }

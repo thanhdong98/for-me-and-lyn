@@ -5,7 +5,7 @@ const GlowButton: FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
     <button className="glowing-btn" onClick={onClick}>
       <span className="glowing-txt">
-        E<span className="faulty-letter">X</span>PLORE
+        Đ<span className="faulty-letter">I</span> TIẾP
       </span>
     </button>
   );

@@ -3,9 +3,13 @@ import "./piyo.css";
 
 const PiyoButton: FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
-    <button onClick={onClick} className="button button--piyo">
+    <button
+      onClick={onClick}
+      className="button button--piyo"
+      style={{ scale: 0.4 }}
+    >
       <div className="button__wrapper">
-        <span className="button__text">Đọc hoyyy</span>
+        <span className="button__text">Lời kết</span>
       </div>
       <div className="characterBox">
         <div className="character wakeup">

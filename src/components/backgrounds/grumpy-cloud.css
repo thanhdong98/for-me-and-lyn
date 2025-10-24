@@ -1,10 +1,9 @@
 .cloud-container {
-  overflow: hidden;
   background-color: #554091;
   position: fixed;
   z-index: -1;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
 }
@@ -12,10 +11,11 @@
 .cloud1,
 .cloud2,
 .cloud3 {
+  transform: scale(0.4);
   position: absolute;
-  left: 75px;
+  left: -180px;
   width: 420px;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   animation: moveCloud1 6s alternate infinite ease-in-out;
 }
@@ -909,7 +909,7 @@
 }
 .cloud2 {
   top: 100px;
-  left: 300px;
+  left: 0;
   animation: moveCloud2 8s alternate infinite ease-in-out;
 }
 .cloud2__clouds2 span:nth-child(1) {
@@ -1041,7 +1041,7 @@
 }
 .cloud3 {
   top: 25px;
-  left: 450px;
+  left: 75px;
   animation: moveCloud3 7s alternate infinite ease-in-out;
   animation-delay: 1;
 }
@@ -1219,23 +1219,25 @@
 }
 @keyframes moveCloud3 {
   to {
-    transform: translateX(600px);
+    transform: translateX(400px);
   }
 }
 @media screen and (max-width: 1400px) {
   @keyframes moveCloud1 {
     to {
-      transform: translateX(300px);
+      transform: translateX(200px);
+      scale: 0.5;
     }
   }
   @keyframes moveCloud2 {
     to {
       transform: translateX(300px);
+      scale: 0.3;
     }
   }
   @keyframes moveCloud3 {
     to {
-      transform: translateX(300px);
+      transform: translateX(100px);
     }
   }
 }

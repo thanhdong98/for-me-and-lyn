@@ -19,7 +19,7 @@ const StoryNavigators: FC<{
   hidePlay = false,
 }) => {
   return (
-    <div className="flex justify-between gap-20">
+    <div className="flex justify-between">
       {!hidePrevious && (
         <button
           onClick={onPreviousAction}

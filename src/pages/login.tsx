@@ -22,6 +22,13 @@ const PinLogin = () => {
       const nextPin = (index + 1) % 6;
       (document.getElementById(`pin-${nextPin}`) as HTMLInputElement).select();
     }
+
+    if (key === "Backspace") {
+      const nextPin = (index - 1) % 6;
+      console.log(nextPin);
+
+      (document.getElementById(`pin-${nextPin}`) as HTMLInputElement).select();
+    }
   };
 
   useEffect(() => {
@@ -32,7 +39,10 @@ const PinLogin = () => {
 
   return (
     <Envelope>
-      <div className="flex flex-col items-center justify-center gap-10">
+      <div
+        className="flex flex-col items-center justify-center gap-10"
+        tabIndex={-1}
+      >
         <div>
           <h1 className="glow-title text-white text-xs">❤️ For Lyn</h1>
           <code
@@ -43,9 +53,10 @@ const PinLogin = () => {
           </code>
         </div>
 
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-2">
           {codes.map((code, index) => (
             <input
+              tabIndex={index + 1}
               id={`pin-${index}`}
               key={index}
               min={0}
@@ -54,7 +65,7 @@ const PinLogin = () => {
               value={code}
               className="block w-9.5 h-9.5 text-center rounded-full sm:text-sm
             border-red-500  focus:border-blue-500 focus:ring-red-500 
-               bg-pink-300"
+               bg-pink-400"
               placeholder="⚬"
               onKeyDown={(e) => onPinChange(e, index)}
             />
