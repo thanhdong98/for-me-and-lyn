@@ -66,7 +66,7 @@ const PageFour = () => {
                     </ul>
                     <br />
                     <p style={{ margin: 0, textIndent: "0.4rem" }}>
-                      🧠 Anh và <em></em>
+                      🧠 Anh và em
                     </p>
                   </div>
                 </div>

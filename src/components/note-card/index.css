@@ -41,8 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 400px;
+  width: 150px;
+  height: 300px;
   margin-left: 120px;
   padding: var(--space-sm) var(--space-sm) var(--space-xlg);
   background: white;
@@ -90,9 +90,9 @@
 
 .bday-message {
   max-width: 80%;
-  padding: 35px var(--space);
+  padding: 10px var(--space);
   font-family: "CCZoninks", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 32px;
   color: var(--message-txt);
   background-color: var(--message-bg);

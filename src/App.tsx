@@ -5,7 +5,7 @@ import "./components/common.css";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   useEffect(() => {
     if (new Date().getTime() > new Date("2025-10-25T11:30:00.000Z").getTime()) {
       setShow(true);
